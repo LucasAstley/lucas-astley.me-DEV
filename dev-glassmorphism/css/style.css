@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section {
+	height: 100vh;
+    width: 200vh;
+}
+/*Glassmorphism section*/
+#glassmorphism::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50%;
+	z-index: 1;
+	backdrop-filter: blur(5px);
+}
+#glassmorphism {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(-45deg, #560005, #36043F, #034D45);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+	height: 100vh;
+	overflow: hidden;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+#glassmorphism h2 {
+	position: absolute;
+	font-size: 48px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	color: #fff;
+	padding: 20px;
+	background: rgba(255,255,255,0.1);
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-radius: 10px;
+	top: 15%;
+}
+#glassmorphism .color {
+	position: absolute;
+	filter: blur(150px);
+}
+#glassmorphism .color:nth-child(1) {
+	width: 600px;
+	height: 800px;
+	top: -350px;
+}
+#glassmorphism .color:nth-child(2) {
+	width: 500px;
+	height: 500px;
+	bottom: -150px;
+	left: 100px;
+}
+#glassmorphism .color:nth-child(3) {
+	width: 100px;
+	height: 100px;
+	bottom: 20px;
+}
+#glassmorphism ul {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+#glassmorphism ul li {
+	position: relative;
+	list-style: none;
+	margin: 10px;
+}
+#glassmorphism ul li a {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	text-decoration: none; 
+	color: #fff;
+	font-size: 3.3em;
+	border: 1px solid rgba(255,255,255,0.4);
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	box-shadow:  0 5px 40px rgba(0,0,0, 0.1);
+	backdrop-filter: blur(2px);
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+}
+#glassmorphism ul li a:hover {
+	transform: translateY(-20px);
+}
+#glassmorphism ul li a::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+	transform: skew(45deg) translateX(150px);
+	transition: 0.5s;
+}
+#glassmorphism ul li a:hover::before {
+	transform: skew(45deg) translateX(-150px);
+}
+#glassmorphism .tv-logo {
+	width: 1.2em;
+	position: absolute;
+	top: .55em;
+	left: .5em;
+	rotate: -13deg;
+}
+#glassmorphism .attic-logo {
+	width: .55em;
+	position: absolute;
+	top: .85em;
+	left: .85em;
+	rotate: -5deg;
+}
+/*Glassmorphism elements */
+#glassmorphism .square {
+	position: absolute;
+	background: rgba(255,255,255,0.1);
+	border-radius: 5px;
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(255,255,255,0.4);	
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	box-shadow:  0 25px 45px rgba(0,0,0, 0.1);
+	z-index: 1;
+	animation: animate 10s linear infinite;
+	animation-delay: calc(-1s * var(--i));
+}
+#glassmorphism .square:nth-child(6) {
+	width: 30px;
+	height: 30px;
+	top: 50%;
+	left: 25%;
+}
+#glassmorphism .square:nth-child(7) {
+	width: 50px;
+	height: 50px;
+	top: 65%;
+	left: 55%;
+}
+#glassmorphism .square:nth-child(8) {
+	width: 50px;
+	height: 50px;
+	top: 55%;
+	left: 35%;
+}
+#glassmorphism .square:nth-child(9) {
+	width: 25px;
+	height: 25px;
+	top: 40%;
+	left: 85%;
+}
+#glassmorphism .square:nth-child(10) {
+	width: 45px;
+	height: 45px;
+	top: 47%;
+	left: 75%;
+}
+#glassmorphism .square:nth-child(11) {
+	width: 50px;
+	height: 50px;
+	top: 35%;
+	left: 33%;
+}
+#glassmorphism .square:nth-child(12) {
+	width: 20px;
+	height: 20px;
+	top: 40%;
+	left: 65%;
+}
+ @keyframes animate {
+ 	0%, 100% {
+ 		transform: translateY(-40px);
+ 	}
+ 	50% {
+ 		transform: translateY(40px);
+ 	}
+ }
