@@ -356,26 +356,51 @@ img {
 }
 
 .skills__html {
-  width: 95%;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  opacity: 100%;
 }
-.skills__html::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+@keyframes progress_1 {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 95%;
+  }
 }
 
 .skills__css {
-  width: 85%;
+  opacity: 100%;
+}
+@keyframes progress_2 {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 85%;
+  }
 }
 
 .skills__js {
-  width: 65%;
+  opacity: 100%;
+}
+@keyframes progress_3 {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 65%;
+  }
 }
 
 .skills__ux {
-  width: 85%;
+  opacity: 100%;
+}
+@keyframes progress_4 {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 85%;
+  }
 }
 
 .skills__img {

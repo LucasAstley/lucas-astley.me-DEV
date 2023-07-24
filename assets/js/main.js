@@ -47,13 +47,22 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-//     reset: true
+//    reset: true
 });
 
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
+
+/*===== SKILLS BARS PROGRESSIONS =====*/
+
+function ProgessivesBars() {
+    document.getElementById('skills__html').style.animation = "progress_1 0.7s ease-in-out forwards";
+    document.getElementById('skills__css').style.animation = "progress_2 0.9s ease-in-out forwards";
+    document.getElementById('skills__js').style.animation = "progress_3 1.1s ease-in-out forwards";
+    document.getElementById('skills__ux').style.animation = "progress_4 1.3s ease-in-out forwards";
+  }
 
 /*==================== LIGHT & DARK MODE SWITCH ====================*/
 // Element
