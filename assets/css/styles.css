@@ -153,7 +153,7 @@ img {
   position: relative;
 }
 
-.nav__link:hover::after {
+/* .nav__link:hover::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -161,10 +161,40 @@ img {
   left: 0;
   top: 2rem;
   background-color: var(--first-color);
+} */
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: var(--first-color);
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--first-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .nav__logo {
   color: var(--second-color);
+  font-size: var(--h2-font-size);
 }
 
 .nav__toggle {
@@ -174,7 +204,7 @@ img {
 }
 
 /*Active menu*/
-.active::after {
+/* .active::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -182,7 +212,7 @@ img {
   left: 0;
   top: 2rem;
   background-color: var(--first-color);
-}
+} */
 
 /*=== Show menu ===*/
 .show {
@@ -207,6 +237,10 @@ img {
 
 .home__title-color {
   color: var(--first-color);
+}
+
+.home__title-color a{
+  display: none;
 }
 
 .home__social {
@@ -252,7 +286,7 @@ img {
 }
 
 .button:hover {
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 35px var(--first-color);
 }
 
 /* ===== ABOUT =====*/
@@ -323,6 +357,13 @@ img {
 
 .skills__html {
   width: 95%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.skills__html::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .skills__css {
@@ -379,6 +420,7 @@ img {
   font-size: var(--normal-font-size);
   cursor: pointer;
   margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===== FOOTER =====*/
@@ -551,4 +593,20 @@ img {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--first-color);
+}
+
+/* LIGHT & DARK MODE SWITCH */
+.animation {
+  animation: BackgroundSpread 500ms backwards;
+}
+
+@keyframes BackgroundSpread {
+  0% {
+      width: 0;
+      height: 0;
+  }
+  100% {
+      width: max(141.42vw, 141.42vh);
+      height: max(141.42vw, 141.42vh);
+  }
 }

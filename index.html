@@ -29,11 +29,12 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="#home" class="hover-underline-animation nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="hover-underline-animation nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="hover-underline-animation nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="hover-underline-animation nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="hover-underline-animation nav__link">Contact</a></li>
+                        <li class="nav__item"><button id="darkmode-btn" onclick="switchMode()"><i class="bx bx-sun" id="btn-icon"></i></button></li>
                     </ul>
                 </div>
 
@@ -47,7 +48,7 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Lucas</span><br> IT Student</h1>
+                    <h1 class="home__title">Hi,<br>I'am <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" title="Hmm"><span class="home__title-color">Lucas</span></a><br> IT Student</h1>
 
                     <a href="#contact" class="button">Contact</a>
                 </div>
@@ -185,7 +186,7 @@
                     <form action="" class="contact__form">
                         <input type="text" placeholder="Name" class="contact__input">
                         <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea name="" type="text" placeholder="Message" id="" cols="0" rows="10" class="contact__input"></textarea>
                         <input type="button" value="Send" class="contact__button button">
                     </form>
                 </div>
