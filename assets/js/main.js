@@ -50,19 +50,37 @@ const sr = ScrollReveal({
 //    reset: true
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
+sr.reveal('.section-title',{});
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{delay: 200}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 
 /*===== SKILLS BARS PROGRESSIONS =====*/
 
-function ProgessivesBars() {
+async function ProgessivesBars() {
+    ProgessivesPercent(95,"skills__html__percent");
     document.getElementById('skills__html').style.animation = "progress_1 0.7s ease-in-out forwards";
-    document.getElementById('skills__css').style.animation = "progress_2 0.9s ease-in-out forwards";
-    document.getElementById('skills__js').style.animation = "progress_3 1.1s ease-in-out forwards";
-    document.getElementById('skills__ux').style.animation = "progress_4 1.3s ease-in-out forwards";
-  }
+    await sleep(100);
+    ProgessivesPercent(85,"skills__css__percent");
+    document.getElementById('skills__css').style.animation = "progress_2 0.7s ease-in-out forwards";
+    await sleep(100);
+    ProgessivesPercent(65,"skills__js__percent");
+    document.getElementById('skills__js').style.animation = "progress_3 0.7s ease-in-out forwards";
+    await sleep(100);
+    ProgessivesPercent(85,"skills__ux__percent");
+    document.getElementById('skills__ux').style.animation = "progress_4 0.7s ease-in-out forwards";
+}
+
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+async function ProgessivesPercent(percent, element) {
+    var section = document.getElementById(element);
+                for(var i = 0;i < percent;i++){
+                    section.textContent = (i+1)+'%';
+                    await sleep(2);
+            }
+}
 
 /*==================== LIGHT & DARK MODE SWITCH ====================*/
 // Element
